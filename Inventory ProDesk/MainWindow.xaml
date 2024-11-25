@@ -5,18 +5,96 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventory_ProDesk"
         mc:Ignorable="d"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Login" Height="500" Width="350" WindowStartupLocation="CenterScreen" WindowStyle="None" FontFamily="Segoe UI Emoji">
+        xmlns:materialDesign="https://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Login" Height="500" Width="350" WindowStyle="None" FontFamily="Segoe UI Emoji" ResizeMode="NoResize">
     <Grid>
-        <Rectangle Height="280" VerticalAlignment="Top">
+
+        <Rectangle Height="314" VerticalAlignment="Top" Margin="0,-34,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF2281D1"/>
                     <GradientStop Color="#FF34268A" Offset="1"/>
-                    <GradientStop Color="#FF33288B" Offset="0.5"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source="./Assets/home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
+
+        <Rectangle Height="280" VerticalAlignment="Top" Margin="20,140,10,0" RadiusY="10" RadiusX="10" Fill="White">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid VerticalAlignment="Bottom" Margin="35,80" Height="240">
+
+            <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-24,0,0" Foreground="Gray" FontSize="18"/>
+
+            <Label x:Name="ErrorPlaceholderLabel" 
+                  Content="" 
+                  VerticalAlignment="Top" 
+                  HorizontalAlignment="Left"
+                  Margin="10,10,0,0"
+                  Foreground="Red"
+                  IsHitTestVisible="False"
+                  FontSize="16" RenderTransformOrigin="0.513,-0.82" />
+
+            <Label x:Name="PlaceholderLabel" 
+                   Content="" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left"
+                   Margin="20,51,0,0"
+                   Foreground="Gray"
+                   IsHitTestVisible="False"
+                   FontSize="16" RenderTransformOrigin="0.513,-0.82" />
+
+            <TextBox x:Name="InputTextBox"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     Width="260"
+                     FontSize="16"
+                     Padding="5"
+                     Text="Enter your username"
+                     GotFocus="InputTextBox_GotFocus"
+                     LostFocus="InputTextBox_LostFocus" Margin="20,87,0,0"/>
+        </Grid>
+        <Button 
+            Width="185" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,405,0,0" 
+            Content="Login" 
+            Height="30" 
+            Background="#FF2281D1" 
+            Cursor="Hand" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="BorderBrush" Value="#FF2281D1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Forgotten your password ?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" Foreground="Gray" Cursor="Help"/>
+        <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/home.png"/>
+        <Label x:Name="passwordPlaceholderLabel" 
+            Content="" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left"
+            Margin="55,302,0,0"
+            Foreground="Gray"
+            IsHitTestVisible="False"
+            FontSize="16" RenderTransformOrigin="0.513,-0.82" />
+        <TextBox x:Name="passwordTextBox"
+         VerticalAlignment="Top"
+         HorizontalAlignment="Left"
+         Width="260"
+         FontSize="16"
+         Padding="5"
+         Text="Enter your password"
+         GotFocus="InputTextBox_GotFocus"
+         LostFocus="InputTextBox_LostFocus" Margin="55,333,0,0"/>
     </Grid>
 </Window>

@@ -10,7 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="home.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Material.Icons.WPF" Version="2.1.10" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="home.png" />
   </ItemGroup>
 
 </Project>
